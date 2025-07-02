@@ -51,13 +51,13 @@ class FramingInterface():
         """
         self.connection_mode = if_type
         if self.connection_mode == "ETH":
-            import EthernetAdapter
-            self.sut_adapter = EthernetAdapter.EthernetAdapter()
+            import freev2g.EthernetAdapter
+            self.sut_adapter = freev2g.EthernetAdapter.EthernetAdapter()
             if mac:
                 self.sut_adapter.dut_mac = mac
         elif self.connection_mode == "SPI":
-            import SpiAdapter
-            self.sut_adapter = SpiAdapter.SpiAdapter()
+            import freev2g.SpiAdapter
+            self.sut_adapter = freev2g.SpiAdapter.SpiAdapter()
         else:
             raise AssertionError("Invalid interface!")
 
