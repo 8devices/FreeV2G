@@ -1,9 +1,9 @@
 import time
 import traceback
-from Logger import *
+from freev2g.Logger import *
 from scapy.automaton import Message
-from Whitebeet import *
-from Battery import *
+from freev2g.Whitebeet import *
+from freev2g.Battery import *
 
 class Ev():
 

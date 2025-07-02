@@ -1,9 +1,9 @@
 import argparse
 import json
-from Evse import *
-from Ev import *
+from freev2g.Evse import *
+from freev2g.Ev import *
 
-if __name__ == "__main__":
+def main():
     WHITEBBET_DEFAULT_MAC = "00:01:01:63:77:33"
     parser = argparse.ArgumentParser(description='Codico Whitebeet reference implementation.')
     parser.add_argument('interface_type', type=str, choices=('eth', 'spi'), help='Type of the interface through which the Whitebeet is connected. ("eth" or "spi").')
@@ -96,3 +96,5 @@ if __name__ == "__main__":
             print("EVSE loop finished")
 
     print("Goodbye!")
+if __name__ == "__main__":
+    main()

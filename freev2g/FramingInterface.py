@@ -3,7 +3,7 @@ import sys
 from multiprocessing import Process, Manager
 from binascii import hexlify, unhexlify
 
-from FramingAPIDef import *
+from freev2g.FramingAPIDef import *
 
 sys.path.append("..")
 

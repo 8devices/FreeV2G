@@ -3,8 +3,8 @@ from encodings import utf_8
 from multiprocessing import Value
 import time
 import struct
-from Logger import *
-from FramingInterface import *
+from freev2g.Logger import *
+from freev2g.FramingInterface import *
 
 class Whitebeet():
 

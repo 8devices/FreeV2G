@@ -1,6 +1,6 @@
 import time
-from Whitebeet import *
-from Charger import *
+from freev2g.Whitebeet import *
+from freev2g.Charger import *
 
 class Evse():
 

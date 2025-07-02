@@ -1,6 +1,6 @@
 from binascii import hexlify, unhexlify
 
-from FramingAPIDef import *
+from freev2g.FramingAPIDef import *
 
 class SUTAdapter:
     def __init__(self):
