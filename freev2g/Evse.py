@@ -57,8 +57,8 @@ class Evse():
             print("Wait until an EV connects")
             while True:
                 cp_state = self.whitebeet.controlPilotGetState()
-                if timeout != None and timestamp_start + timeout > time.time():
-                    return False
+                if timeout is not None and time.time() - timestamp_start > timeout:
+                    raise RuntimeError("EV did not connect within {} seconds - aborting test".format(timeout))
                 if cp_state == 0:
                     time.sleep(0.1)
                 elif cp_state == 1:
@@ -232,7 +232,7 @@ class Evse():
         print(message['timeout'])
         timeout = int(message['timeout'] / 1000) - 1
         # Promt for authorization status
-        auth_str = input("Authorize the vehicle? Type \"yes\" or \"no\" in the next {}s: ".format(timeout))
+        print("Authorize the vehicle? Type \"yes\" or \"no\" in the next {}s: ".format(timeout))
         auth_str = "yes"
         if auth_str is not None and auth_str == "yes":
             print("Vehicle was authorized by user!")
@@ -634,7 +634,7 @@ class Evse():
         This will handle a complete charging session of the EVSE.
         """
         self._initialize()
-        if self._waitEvConnected(None):
+        if self._waitEvConnected(timeout=30):
             return self._handleEvConnected()
         else:
             return False
