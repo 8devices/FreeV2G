@@ -16,8 +16,8 @@ import RPi.GPIO as GPIO
 import re
 
 
-from SUTAdapter import *
-from FramingAPIDef import *
+from freev2g.SUTAdapter import *
+from freev2g.FramingAPIDef import *
 
 #def log(x): return print(x)
 def log(x): return

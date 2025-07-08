@@ -5,8 +5,8 @@ from platform import system as system_type
 from scapy.all import *
 from scapy.layers.l2 import Ether, getmacbyip, sendp
 
-from SUTAdapter import *
-from FramingAPIDef import *
+from freev2g.SUTAdapter import *
+from freev2g.FramingAPIDef import *
 
 if system_type() == "Linux":
     from pylibpcap.base import Sniff
